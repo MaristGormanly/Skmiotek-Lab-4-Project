@@ -1,0 +1,23 @@
+{
+  "name": "skmiotek-lab-4-project",
+  "version": "1.0.0",
+  "description": "SD2 Final Project npm installation ",
+  "main": "server/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaristGormanly/Skmiotek-Lab-4-Project.git"
+  },
+  "keywords": [
+    "[Final]",
+    "[Project]"
+  ],
+  "author": "Sebastian",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MaristGormanly/Skmiotek-Lab-4-Project/issues"
+  },
+  "homepage": "https://github.com/MaristGormanly/Skmiotek-Lab-4-Project#readme"
+}

@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/MaristGormanly/Skmiotek-Lab-4-Project/issues"
   },
-  "homepage": "https://github.com/MaristGormanly/Skmiotek-Lab-4-Project#readme"
+  "homepage": "https://github.com/MaristGormanly/Skmiotek-Lab-4-Project#readme",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
 }

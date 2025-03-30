@@ -129,10 +129,7 @@ const pageTemplates = {
         <div class="content-section">
             <h3 class="section-title">Brief Personal Music Background</h3>
             <div class="content-box">
-                <p>I've been producing music for over 10 years, specializing in hip-hop, electronic, and experimental genres. My journey began with a simple MIDI controller and a cracked version of FL Studio, and has since evolved to a fully-equipped home studio setup.</p>
-                <p>Throughout my career, I've collaborated with various artists, released music on independent labels, and scored several short films. I'm passionate about sound design, vintage synthesizers, and combining traditional instruments with modern production techniques.</p>
-                <p>Skull Kap Studios began as a personal project to document my own production journey and has grown into a platform to share knowledge and connect with other music creators worldwide.</p>
-            </div>
+                <p>Details coming soon</p>
         </div>
         
         <div class="content-section">
@@ -144,10 +141,8 @@ const pageTemplates = {
                     <li>Provide honest reviews and recommendations for production equipment</li>
                     <li>Share production techniques and workflow tips</li>
                     <li>Connect producers for collaborations and skill-sharing</li>
-                    <li>Demystify the technical aspects of music production</li>
                 </ul>
-                <p>This isn't just another gear review site – I want to foster real connections and help creators find their unique sound without getting lost in endless equipment options.</p>
-            </div>
+                
         </div>
         
         <div class="about-images">

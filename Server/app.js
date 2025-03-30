@@ -1,15 +1,17 @@
-const express = require('express'); 
+const express = require('express');
 const app = express();
 
-app.get('/', function (req, res) {
-  res.sendFile('index.html', {root: './client/views' })
+// Serve static files from the client directory
+app.use(express.static('./client'));
 
+// Route for the main HTML page
 app.get('/', function (req, res) {
-  res.sendFile('styles.css', {root: './client/views' })
-})
-app.listen(1337, () => console.log('Marist Chatter listening on port 1337!'));
+  res.sendFile('index.html', {root: './client/views'});
+});
 
-        // Page Content Templates
+app.listen(1337, () => console.log('Skull Kap Studios listening on port 1337!'));
+
+// Page Content Templates
 const pageTemplates = {
     home: `
         <h2 class="page-title">WELCOME TO SKULL KAP STUDIOS</h2>

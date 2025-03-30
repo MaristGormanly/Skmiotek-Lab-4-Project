@@ -1,10 +1,496 @@
-<!doctype html> 
-<html>
-  <head>
-     <title>Hello World</title>
-  </head> 
-  <body>
-    <h1>Welcome!</h1>
-    <p>I hope this works</p> 
-  </body>
-</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skull Kap Studios</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #000;
+            color: #fff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            padding: 20px 0;
+            border-bottom: 1px solid #333;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-text {
+            font-size: 14px;
+            color: #999;
+            margin-right: 20px;
+        }
+
+        .site-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ff3333;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ff3333;
+        }
+
+        .btn-login {
+            background-color: #ff3333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .btn-login:hover {
+            background-color: #cc0000;
+        }
+
+        /* Page Title Styles */
+        .page-title {
+            font-size: 36px;
+            margin: 40px 0;
+            font-weight: normal;
+            letter-spacing: 2px;
+        }
+
+        /* Content Section Styles */
+        .content-section {
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 15px;
+            display: inline-block;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        .content-box {
+            background-color: #222;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+        }
+
+        /* Grid Layouts */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        /* Software Page Styles */
+        .software-item {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        /* Instrument Page Styles */
+        .instrument-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .instrument-image {
+            height: 150px;
+            background-color: #333;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+        }
+
+        /* About Page Styles */
+        .about-images {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .about-image {
+            height: 150px;
+            background-color: #333;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #222;
+            padding: 30px;
+            border-radius: 5px;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .modal-title {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #ff3333;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #444;
+            background-color: #333;
+            color: #fff;
+            border-radius: 3px;
+        }
+
+        .modal-buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .btn-primary {
+            background-color: #ff3333;
+            color: #fff;
+        }
+
+        .btn-secondary {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .grid-4 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .software-item {
+                grid-template-columns: 1fr;
+            }
+            
+            .header-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+                flex-wrap: wrap;
+            }
+            
+            nav ul li {
+                margin: 0 10px 10px 0;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .grid-2, .grid-4 {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-images {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo-container">
+                <div class="logo-text">WEBSITE<br>LOGO HERE</div>
+                <h1 class="site-title" id="site-title">SKULL KAP STUDIOS</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="instruments.html" id="nav-instruments">INSTRUMENTS</a></li>
+                    <li><a href="software.html" id="nav-software">SOFTWARE</a></li>
+                    <li><a href="studios.html" id="nav-studios">STUDIOS</a></li>
+                    <li><a href="about.html" id="nav-about">ABOUT ME</a></li>
+                    <li><button class="btn-login" id="btn-login">SIGN UP/LOG IN</button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container" id="main-content">
+        <!-- Content will be loaded here dynamically -->
+    </main>
+
+    <!-- Login/Signup Modal -->
+    <div class="modal" id="login-modal">
+        <div class="modal-content">
+            <span class="close" id="close-modal">&times;</span>
+            <h2 class="modal-title">Sign Up / Log In</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required>
+                </div>
+                <div class="modal-buttons">
+                    <button type="button" class="btn btn-secondary" id="btn-cancel">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Log In</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Page Content Templates
+        const pageTemplates = {
+            home: `
+                <h2 class="page-title">WELCOME TO SKULL KAP STUDIOS</h2>
+                
+                <div class="content-section">
+                    <h3 class="section-title">Website Description</h3>
+                    <div class="content-box">
+                        <p>Skull Kap Studios is your ultimate destination for all things music production. Whether you're a beginner looking to start making beats or a professional producer searching for the best equipment and software, we've got you covered. Our community connects musicians, producers, and audio engineers worldwide.</p>
+                        <p>Browse our curated selection of instruments, software recommendations, and studio setups. Share your own experiences, ask questions, and connect with like-minded creators in our growing community.</p>
+                    </div>
+                </div>
+                
+                <div class="content-section">
+                    <h3 class="section-title">Website Audience</h3>
+                    <div class="content-box">
+                        <p>This platform was created for:</p>
+                        <ul>
+                            <li>Music producers of all levels</li>
+                            <li>Professional audio engineers</li>
+                            <li>Musicians looking to improve their production skills</li>
+                            <li>Anyone interested in music technology and production techniques</li>
+                            <li>Those that share a love for all things music!</li>
+                        </ul>
+                        <p>Whether you're just starting out or have years of experience, you'll find valuable resources and connections here at Skull Kap Studios.</p>
+                    </div>
+                </div>
+            `,
+            
+            software: `
+                <h2 class="page-title">POPULAR SOFTWARE FOR MUSIC PRODUCTION</h2>
+                
+                <div class="content-section">
+                    <div class="software-item">
+                        <div class="content-box">
+                            <h3>Ableton Live</h3>
+                            <p>Ableton Live is a digital audio workstation designed for music creation, recording, arrangement, mixing, and mastering. Known for its unique session view, it's particularly popular with electronic music producers and live performers.</p>
+                            <p>Key features include:</p>
+                            <ul>
+                                <li>Dual arrangement and session views</li>
+                                <li>Powerful MIDI sequencing</li>
+                                <li>Intuitive sample warping</li>
+                                <li>Built-in instruments and effects</li>
+                            </ul>
+                            <a href="https://www.ableton.com" target="_blank">Visit Website</a>
+                        </div>
+                        <div class="content-box instrument-image">Image</div>
+                    </div>
+                    
+                    <div class="software-item">
+                        <div class="content-box">
+                            <h3>FL Studio</h3>
+                            <p>FL Studio (formerly known as FruityLoops) is a complete software music production environment. Popular with beat makers and electronic producers, it's known for its pattern-based sequencer and intuitive workflow.</p>
+                            <p>Key features include:</p>
+                            <ul>
+                                <li>Step sequencer and piano roll</li>
+                                <li>Pattern-based workflow</li>
+                                <li>Lifetime free updates</li>
+                                <li>Extensive plugin compatibility</li>
+                            </ul>
+                            <a href="https://www.image-line.com" target="_blank">Visit Website</a>
+                        </div>
+                        <div class="content-box instrument-image">Image</div>
+                    </div>
+                </div>
+            `,
+            
+            instruments: `
+                <h2 class="page-title">INSTRUMENTS</h2>
+                
+                <div class="content-section">
+                    <div class="grid-4">
+                        <div class="instrument-item">
+                            <div class="instrument-image">Instrument Image</div>
+                            <h3 class="section-title">AKAI MPK Mini</h3>
+                            <div class="content-box">
+                                <p>A compact MIDI keyboard controller with 25 mini keys, 8 drum pads, and 8 assignable knobs. Perfect for beginners and producers on the go.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="instrument-item">
+                            <div class="instrument-image">Instrument Image</div>
+                            <h3 class="section-title">Roland TR-8S</h3>
+                            <div class="content-box">
+                                <p>A powerful drum machine with authentic recreations of classic Roland drum machines plus modern features and sample import capabilities.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="instrument-item">
+                            <div class="instrument-image">Instrument Image</div>
+                            <h3 class="section-title">Moog Subsequent 37</h3>
+                            <div class="content-box">
+                                <p>A paraphonic analog synthesizer with rich, powerful sound. Features a 37-note keyboard, dual oscillators, and extensive modulation options.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="instrument-item">
+                            <div class="instrument-image">Instrument Image</div>
+                            <h3 class="section-title">Native Instruments Maschine</h3>
+                            <div class="content-box">
+                                <p>A hardware/software production system combining a sampler, sequencer, and controller in one intuitive package. Great for beat-making and live performance.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `,
+            
+            studios: `
+                <h2 class="page-title">STUDIOS</h2>
+                
+                <div class="content-section">
+                    <h3 class="section-title">Featured Studios</h3>
+                    <div class="content-box">
+                        <p>This section is under development. We'll soon be featuring professional studios for recording, mixing, and mastering, as well as showcasing home studio setups from our community members.</p>
+                        <p>Check back soon for:</p>
+                        <ul>
+                            <li>Studio tours and equipment lists</li>
+                            <li>Acoustic treatment tips</li>
+                            <li>Budget-friendly studio solutions</li>
+                            <li>Professional studio recommendations</li>
+                            <li>Community studio showcases</li>
+                        </ul>
+                    </div>
+                </div>
+            `,
+            
+            about: `
+                <h2 class="page-title">ABOUT ME</h2>
+                
+                <div class="content-section">
+                    <h3 class="section-title">Brief Personal Music Background</h3>
+                    <div class="content-box">
+                        <p>I've been producing music for over 10 years, specializing in hip-hop, electronic, and experimental genres. My journey began with a simple MIDI controller and a cracked version of FL Studio, and has since evolved to a fully-equipped home studio setup.</p>
+                        <p>Throughout my career, I've collaborated with various artists, released music on independent labels, and scored several short films. I'm passionate about sound design, vintage synthesizers, and combining traditional instruments with modern production techniques.</p>
+                        <p>Skull Kap Studios began as a personal project to document my own production journey and has grown into a platform to share knowledge and connect with other music creators worldwide.</p>
+                    </div>
+                </div>
+                
+                <div class="content-section">
+                    <h3 class="section-title">My goals for this website</h3>
+                    <div class="content-box">
+                        <p>With Skull Kap Studios, I aim to:</p>
+                        <ul>
+                            <li>Create a supportive community for music producers of all levels</li>
+                            <li>Provide honest reviews and recommendations for production equipment</li>
+                            <li>Share production techniques and workflow tips</li>
+                            <li>Connect producers for collaborations and skill-sharing</li>
+                            <li>Demystify the technical aspects of music production</li>
+                        </ul>
+                        <p>This isn't just another gear review site – I want to foster real connections and help creators find their unique sound without getting lost in endless equipment options.</p>
+                    </div>
+                </div>
+                
+                <div class="about-images">
+                    <div class="about-image">Studio Image</div>
+                    <div class="about-image">Creator Image</div>
+                </div>
+            `
+        };

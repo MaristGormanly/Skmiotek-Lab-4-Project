@@ -4,55 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Skull Kap Studios</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-    <!-- Header -->
     <header>
-        <div class="container header-container">
-            <div class="logo-container">
-                <div class="logo-text">WEBSITE<br>LOGO HERE</div>
-                <h1 class="site-title" id="site-title">SKULL KAP STUDIOS</h1>
-            </div>
+        <div class="header-container">
+            <h1 id="site-title">SKULL KAP STUDIOS</h1>
             <nav>
-                <ul>
-                    <li><a href="instruments.html" id="nav-instruments">INSTRUMENTS</a></li>
-                    <li><a href="software.html" id="nav-software">SOFTWARE</a></li>
-                    <li><a href="studios.html" id="nav-studios">STUDIOS</a></li>
-                    <li><a href="about.html" id="nav-about">ABOUT ME</a></li>
-                    <li><button class="btn-login" id="btn-login">SIGN UP/LOG IN</button></li>
-                </ul>
+                <a href="#" id="nav-instruments">INSTRUMENTS</a>
+                <a href="#" id="nav-software">SOFTWARE</a>
+                <a href="#" id="nav-studios">STUDIOS</a>
+                <a href="#" id="nav-about">ABOUT</a>
             </nav>
+            <button id="btn-login">LOGIN</button>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="container" id="main-content">
-        <!-- Content will be loaded here dynamically -->
+    <main id="main-content">
+        <!-- Content will be loaded dynamically via JavaScript -->
     </main>
 
-    <!-- Login/Signup Modal -->
-    <div class="modal" id="login-modal">
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2025 Skull Kap Studios. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal">
         <div class="modal-content">
-            <span class="close" id="close-modal">&times;</span>
-            <h2 class="modal-title">Sign Up / Log In</h2>
+            <span id="close-modal" class="close-button">&times;</span>
+            <h2>Login</h2>
             <form id="login-form">
                 <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" required>
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
                 </div>
                 <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" required>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
                 </div>
-                <div class="modal-buttons">
-                    <button type="button" class="btn btn-secondary" id="btn-cancel">Cancel</button>
-                    <button type="submit" class="btn btn-primary">Log In</button>
+                <div class="form-actions">
+                    <button type="submit" id="btn-submit">Login</button>
+                    <button type="button" id="btn-cancel">Cancel</button>
                 </div>
             </form>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <!-- Include the client-side JavaScript -->
+    <script src="/js/main.js"></script>
 </body>
 </html>

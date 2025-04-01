@@ -203,7 +203,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     loginForm.addEventListener('submit', function(e) {
         e.preventDefault();
-        // Here you would typically handle authentication
+        // Authentication
         alert('Login functionality would be implemented here in a production site.');
         modal.style.display = 'none';
     });

@@ -10,10 +10,5 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, '../client/views/index.html'));
 });
 
-// Route for CSS file
-app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, '../client/public/css/style.css'));
-});
-
 // Start the server
 app.listen(1337, () => console.log('Skull Kap Studios listening on port 1337!'));

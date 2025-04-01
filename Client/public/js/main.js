@@ -1,6 +1,6 @@
 // Page Content Templates
 const pageTemplates = {
-    home: `
+    home: 
         <h2 class="page-title">WELCOME TO SKULL KAP STUDIOS</h2>
         
         <div class="content-section">
@@ -149,7 +149,7 @@ const pageTemplates = {
             <div class="about-image">Studio Image</div>
             <div class="about-image">Creator Image</div>
         </div>
-    `
+    
 };
 
 // Navigation and Page Loading

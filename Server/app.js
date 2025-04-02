@@ -1,24 +1,40 @@
 const express = require('express');
 const path = require('path');
+const fs = require('fs');
 const app = express();
 
-// Log current directory
+// server start information
+console.log('Starting Skull Kap Studios server...');
 console.log('Current directory:', __dirname);
 
-// Serve static files from the correct location
-app.use(express.static(path.join(__dirname, '../client/public')));
-
-console.log('Static files directory:', path.join(__dirname, '../client/public'));
-
-// Serve index.html for the root route
-app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, '../client/views/index.html'));
+app.use((req, res, next) => {
+    console.log(`${new Date().toISOString()} - ${req.method} ${req.url}`);
+    next();
 });
 
-// Serve index.html for any other routes
-app.get('/*', function (req, res) {
-  res.sendFile(path.join(__dirname, '../client/views/index.html'));
+// serve static files from the 'public' directory
+app.use(express.static('public'));
+console.log('Serving static files from:', path.join(__dirname, 'public'));
+
+// Check if important files exist
+const cssPath = path.join(__dirname, 'public/css/style.css');
+const jsPath = path.join(__dirname, 'public/js/main.js');
+const indexPath = path.join(__dirname, 'public/index.html');
+
+console.log('Checking for critical files:');
+console.log('CSS file exists:', fs.existsSync(cssPath));
+console.log('JS file exists:', fs.existsSync(jsPath));
+console.log('HTML file exists:', fs.existsSync(indexPath));
+
+// Route for any route to serve index.html
+app.get('*', (req, res) => {
+    console.log('Serving index.html for route:', req.url);
+    res.sendFile(path.join(__dirname, 'public/index.html'));
 });
 
 // Start the server
-app.listen(1337, () => console.log('Skull Kap Studios listening on port 1337!'));
+const PORT = 1337;
+app.listen(PORT, () => {
+    console.log(`Skull Kap Studios server running at http://localhost:${PORT}`);
+    console.log('Open this URL in your browser to view the site');
+});

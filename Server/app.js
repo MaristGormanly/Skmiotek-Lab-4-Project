@@ -10,5 +10,5 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 
 // Start the server
-app.listen(1337, () => console.log('Skull Kap Studios listening on port 1337!'));
+app.listen(1337, () => console.log('Skull Kap Studios running on http://localhost:1337'));
 });

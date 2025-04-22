@@ -10,5 +10,15 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, '../client/views/index.html'));
 });
 
+const express = require('express');
+const bodyParser = require('body-parser');
+const websiteFeatureRoutes = require('./server/route/websiteFeatureRoute');
+
+const websiteFeatureApp = express(); 
+websiteFeatureApp.use(bodyParser.json());
+
+// WebsiteFeature API routes
+websiteFeatureApp.use('/api/websiteFeature', websiteFeatureRoutes);
+
 // Start the server
 app.listen(1337, () => console.log('Skull Kap Studios listening on port 1337!'));

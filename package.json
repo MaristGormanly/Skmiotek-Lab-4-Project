@@ -5,7 +5,7 @@
   "main": "server/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./server/app.js" 
+    "start": "node ./server/app.js"
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/MaristGormanly/Skmiotek-Lab-4-Project#readme",
   "dependencies": {
+    "body-parser": "^2.2.0",
     "express": "^4.21.2"
   }
 }

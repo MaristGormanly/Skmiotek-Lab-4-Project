@@ -1,6 +1,11 @@
 const express = require('express');
 const path = require('path');
 const app = express();
+const bodyParser = require('body-parser');
+const websiteFeatureRoutes = require('./server/route/websiteFeatureRoute');
+const websiteFeatureApp = express(); 
+
+websiteFeatureApp.use(bodyParser.json());
 
 // serve static files from the client directory
 app.use(express.static(path.join(__dirname, '../client/public')));
@@ -13,13 +18,6 @@ app.get('/', function (req, res) {
 // route for userRoute.js
 let userRoutes = require('../route/userRoute');
 app.use('/api/user', userRoutes);
-
-const express = require('express');
-const bodyParser = require('body-parser');
-const websiteFeatureRoutes = require('./server/route/websiteFeatureRoute');
-
-const websiteFeatureApp = express(); 
-websiteFeatureApp.use(bodyParser.json());
 
 // websitefeature API routes
 websiteFeatureApp.use('/api/websiteFeature', websiteFeatureRoutes);

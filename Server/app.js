@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 const app = express();
 const bodyParser = require('body-parser');
-const websiteFeatureRoutes = require('./server/route/websiteFeatureRoute');
+const websiteFeatureRoutes = require('../route/websiteFeatureRoute');
 const websiteFeatureApp = express(); 
 
 websiteFeatureApp.use(bodyParser.json());

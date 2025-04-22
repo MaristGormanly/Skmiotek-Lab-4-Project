@@ -3,7 +3,7 @@ const websiteFeatureController = require('../controller/websiteFeatureController
 
 const router = express.Router();
 
-// All website features routes
+// all website features routes
 router.route('/')
     .get((req, res) => {
         websiteFeatureController.getAllWebsiteFeatures(req, res);
@@ -12,7 +12,7 @@ router.route('/')
         websiteFeatureController.saveWebsiteFeature(req, res);
     });
 
-// Website feature by array index route
+// website feature by array index route
 router.route('/:index')
     .get((req, res) => {
         websiteFeatureController.getWebsiteFeature(req, res);

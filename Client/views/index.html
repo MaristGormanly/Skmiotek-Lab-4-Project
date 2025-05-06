@@ -9,23 +9,19 @@
 <body>
     <header>
         <div class="header-container">
-            <div class="logo-container">
-                <h1 class="site-title">SKULL KAP STUDIOS</h1>
-            </div>
+            <h1 id="site-title">SKULL KAP STUDIOS</h1>
             <nav>
-                <ul>
-                    <li><a href="#" id="nav-instruments">INSTRUMENTS</a></li>
-                    <li><a href="#" id="nav-software">SOFTWARE</a></li>
-                    <li><a href="#" id="nav-studios">STUDIOS</a></li>
-                    <li><a href="#" id="nav-about">ABOUT</a></li>
-                </ul>
+                <a href="#" id="nav-instruments">INSTRUMENTS</a>
+                <a href="#" id="nav-software">SOFTWARE</a>
+                <a href="#" id="nav-studios">STUDIOS</a>
+                <a href="#" id="nav-about">ABOUT</a>
             </nav>
-            <button class="btn-login">LOGIN</button>
+            <button id="btn-login">LOGIN</button>
         </div>
     </header>
 
     <main id="main-content">
-        
+        <!-- Content loaded dynamically via JavaScript -->
     </main>
 
     <footer>
@@ -37,8 +33,8 @@
     <!-- Login Modal -->
     <div id="login-modal" class="modal">
         <div class="modal-content">
-            <span id="close-modal" class="close">&times;</span>
-            <h2 class="modal-title">Login</h2>
+            <span id="close-modal" class="close-button">&times;</span>
+            <h2>Login</h2>
             <form id="login-form">
                 <div class="form-group">
                     <label for="username">Username:</label>
@@ -48,9 +44,9 @@
                     <label for="password">Password:</label>
                     <input type="password" id="password" name="password" required>
                 </div>
-                <div class="modal-buttons">
-                    <button type="submit" class="btn btn-primary">Login</button>
-                    <button type="button" class="btn btn-secondary" id="btn-cancel">Cancel</button>
+                <div class="form-actions">
+                    <button type="submit" id="btn-submit">Login</button>
+                    <button type="button" id="btn-cancel">Cancel</button>
                 </div>
             </form>
         </div>

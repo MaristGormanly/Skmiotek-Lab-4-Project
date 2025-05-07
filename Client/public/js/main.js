@@ -86,27 +86,26 @@ function loadPageContent(pageId) {
         <p>A powerful drum machine with authentic recreations of classic Roland drum machines plus modern features and sample import capabilities.</p>
       </div>
     </div>
-  </section>
+    <div class="instrument-item">
+        <div class="instrument-image">
+            <img src="/assets/instruments/moog-subsequent-37.jpg" alt="Moog Subsequent 37">
+        </div>
+        <div class="instrument-description">
+            <h3>Moog Subsequent 37</h3>
+            <p>A paraphonic analog synthesizer with rich, powerful sound. Features a 37-note keyboard, dual oscillators, and extensive modulation options.</p>
+        </div>
+    </div>
 
-                <div class="instrument-item">
-    <div class="instrument-image">
-        <img src="/assets/instruments/moog-subsequent-37.jpg" alt="Moog Subsequent 37">
+    <div class="instrument-item">
+        <div class="instrument-image">
+            <img src="/assets/instruments/maschine.jpg" alt="Native Instruments Maschine">
+        </div>
+        <div class="instrument-description">
+            <h3>Native Instruments Maschine</h3>
+            <p>A hardware/software production system combining a sampler, sequencer, and controller in one intuitive package. Great for beat-making and live performance.</p>
+        </div>
     </div>
-    <div class="instrument-description">
-        <h3>Moog Subsequent 37</h3>
-        <p>A paraphonic analog synthesizer with rich, powerful sound. Features a 37-note keyboard, dual oscillators, and extensive modulation options.</p>
-    </div>
-</div>
-
-<div class="instrument-item">
-    <div class="instrument-image">
-        <img src="/assets/instruments/maschine.jpg" alt="Native Instruments Maschine">
-    </div>
-    <div class="instrument-description">
-        <h3>Native Instruments Maschine</h3>
-        <p>A hardware/software production system combining a sampler, sequencer, and controller in one intuitive package. Great for beat-making and live performance.</p>
-    </div>
-</div>
+</section>
 `,
     
     studios: `

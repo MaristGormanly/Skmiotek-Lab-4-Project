@@ -7,8 +7,7 @@ function loadPageContent(pageId) {
         <div class="content-section">
             <h3 class="section-title">Website Description</h3>
             <div class="content-box">
-                <p>Skull Kap Studios is your ultimate destination for all things music production. Whether you're a beginner looking to start making beats or a professional producer searching for the best equipment and software, we've got you covered. Our community connects musicians, producers, and audio engineers of all experience levels.</p>
-                <p>Browse our curated selection of instruments, software recommendations, and studio setups. Share your own experiences, ask questions, and connect with like-minded creators in an ever growing community.</p>
+                <p>Skull Kap Studios is your ultimate destination for all things music production. Whether you're a beginner looking to start making beats or a professional producer searching for the best equipment and software, we've got you covered. Our community connects musicians, producers, and audio engineers of all experience levels. Browse our curated selection of instruments, software recommendations, and studio setups. Share your own experiences, ask questions, and connect with like-minded creators in an ever growing community.</p>
             </div>
         </div>
         
@@ -71,7 +70,10 @@ function loadPageContent(pageId) {
         <div class="content-section">
             <div class="grid-4">
                 <div class="instrument-item">
-                    <div class="instrument-image">Instrument Image</div>
+                    <div class="instrument-image">
+                        <div class="instrument-image">
+                            <img src="/public/img/akaimini.jpeg" alt="AKAI MPK Mini">
+                        </div>
                     <h3 class="section-title">AKAI MPK Mini</h3>
                     <div class="content-box">
                         <p>A compact MIDI keyboard controller with 25 mini keys, 8 drum pads, and 8 assignable knobs. Perfect for beginners and producers on the go.</p>

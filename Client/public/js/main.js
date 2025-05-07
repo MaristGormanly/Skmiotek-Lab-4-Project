@@ -179,6 +179,12 @@ document.addEventListener("DOMContentLoaded", () => {
         loadPageContent("about");
     });
 
+    document.getElementById("nav-home")?.addEventListener("click", (e) => {
+        e.preventDefault();
+        loadPageContent("home");
+    });
+    
+
     // Load home page content initially
     loadPageContent("home");
 });

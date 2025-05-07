@@ -154,25 +154,29 @@ const pageTemplates = {
 
 // main.js
 
-// Utility function to fetch and load page content
 function loadPageContent(pageId) {
-    fetch(`/pages/${pageId}.html`)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`Could not load ${pageId}.html`);
-            }
-            return response.text();
-        })
-        .then(html => {
-            document.getElementById("main-content").innerHTML = html;
-        })
-        .catch(err => {
-            console.error(err);
-            document.getElementById("main-content").innerHTML = `<p style="color: red;">Page failed to load.</p>`;
-        });
+    const content = {
+        instruments: `
+            <h2>Instruments</h2>
+            <p>Welcome to the Instruments page.</p>
+        `,
+        software: `
+            <h2>Software</h2>
+            <p>Explore our custom software tools here.</p>
+        `,
+        studios: `
+            <h2>Studios</h2>
+            <p>Book studio time or explore studio features.</p>
+        `,
+        about: `
+            <h2>About Us</h2>
+            <p>Skull Kap Studios is dedicated to creativity and production.</p>
+        `
+    };
+
+    document.getElementById("main-content").innerHTML = content[pageId] || "<p>Page not found.</p>";
 }
 
-// Set up listeners for navigation buttons
 document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("nav-instruments")?.addEventListener("click", (e) => {
         e.preventDefault();
@@ -194,10 +198,11 @@ document.addEventListener("DOMContentLoaded", () => {
         loadPageContent("about");
     });
 
+    // Load default content
     loadPageContent("instruments");
 });
 
-// Modal logic 
+// Modal Logic
 const modal = document.getElementById("login-modal");
 const loginBtn = document.querySelector(".btn-login");
 const closeBtn = document.getElementById("close-modal");
@@ -207,9 +212,9 @@ loginBtn?.addEventListener("click", () => modal.style.display = "flex");
 closeBtn?.addEventListener("click", () => modal.style.display = "none");
 cancelBtn?.addEventListener("click", () => modal.style.display = "none");
 
-// Hide modal if clicked outside content
 window.addEventListener("click", (e) => {
     if (e.target === modal) {
         modal.style.display = "none";
     }
 });
+

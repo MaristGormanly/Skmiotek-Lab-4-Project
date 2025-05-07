@@ -123,7 +123,7 @@ const pageTemplates = {
         </div>
     `,
     
-    about: `
+    about: `\
         <h2 class="page-title">ABOUT ME</h2>
         
         <div class="content-section">
@@ -152,97 +152,64 @@ const pageTemplates = {
     `
 };
 
-// Navigation and Page Loading
-document.addEventListener('DOMContentLoaded', function() {
-    // Default to home page
-    loadPage('home');
-    
-    // Set up navigation
-    document.getElementById('site-title').addEventListener('click', function() {
-        loadPage('home');
-    });
-    
-    document.getElementById('nav-instruments').addEventListener('click', function(e) {
-        e.preventDefault();
-        loadPage('instruments');
-    });
-    
-    document.getElementById('nav-software').addEventListener('click', function(e) {
-        e.preventDefault();
-        loadPage('software');
-    });
-    
-    document.getElementById('nav-studios').addEventListener('click', function(e) {
-        e.preventDefault();
-        loadPage('studios');
-    });
-    
-    document.getElementById('nav-about').addEventListener('click', function(e) {
-        e.preventDefault();
-        loadPage('about');
-    });
-    
-    // Modal functionality
-    const modal = document.getElementById('login-modal');
-    const btnLogin = document.getElementById('btn-login');
-    const closeModal = document.getElementById('close-modal');
-    const btnCancel = document.getElementById('btn-cancel');
-    const loginForm = document.getElementById('login-form');
-    
-    btnLogin.addEventListener('click', function() {
-        modal.style.display = 'flex';
-    });
-    
-    closeModal.addEventListener('click', function() {
-        modal.style.display = 'none';
-    });
-    
-    btnCancel.addEventListener('click', function() {
-        modal.style.display = 'none';
-    });
-    
-    loginForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        // Authentication
-        alert('Login functionality would be implemented here in a production site.');
-        modal.style.display = 'none';
-    });
-    
-    // Close modal when clicking outside
-    window.addEventListener('click', function(e) {
-        if (e.target === modal) {
-            modal.style.display = 'none';
-        }
-    });
-});
+// main.js
 
-// Function to load page content
-function loadPage(page) {
-    const mainContent = document.getElementById('main-content');
-    mainContent.innerHTML = pageTemplates[page] || pageTemplates.home;
-    
-    // Update active nav item
-    document.querySelectorAll('nav a').forEach(item => {
-        item.classList.remove('active');
-    });
-    
-    const activeNav = document.getElementById(`nav-${page}`);
-    if (activeNav) {
-        activeNav.classList.add('active');
-    }
-    
-    // Scroll to top
-    window.scrollTo(0, 0);
-    
-    // Update browser history
-    history.pushState({page: page}, `${page.charAt(0).toUpperCase() + page.slice(1)} - Skull Kap Studios`, `/${page}.html`);
+// Utility function to fetch and load page content
+function loadPageContent(pageId) {
+    fetch(`/pages/${pageId}.html`)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Could not load ${pageId}.html`);
+            }
+            return response.text();
+        })
+        .then(html => {
+            document.getElementById("main-content").innerHTML = html;
+        })
+        .catch(err => {
+            console.error(err);
+            document.getElementById("main-content").innerHTML = `<p style="color: red;">Page failed to load.</p>`;
+        });
 }
 
-// Handle browser back/forward buttons
-window.addEventListener('popstate', function(e) {
-    if (e.state && e.state.page) {
-        loadPage(e.state.page);
-    } else {
-        loadPage('home');
+// Set up listeners for navigation buttons
+document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("nav-instruments")?.addEventListener("click", (e) => {
+        e.preventDefault();
+        loadPageContent("instruments");
+    });
+
+    document.getElementById("nav-software")?.addEventListener("click", (e) => {
+        e.preventDefault();
+        loadPageContent("software");
+    });
+
+    document.getElementById("nav-studios")?.addEventListener("click", (e) => {
+        e.preventDefault();
+        loadPageContent("studios");
+    });
+
+    document.getElementById("nav-about")?.addEventListener("click", (e) => {
+        e.preventDefault();
+        loadPageContent("about");
+    });
+
+    loadPageContent("instruments");
+});
+
+// Modal logic 
+const modal = document.getElementById("login-modal");
+const loginBtn = document.querySelector(".btn-login");
+const closeBtn = document.getElementById("close-modal");
+const cancelBtn = document.getElementById("btn-cancel");
+
+loginBtn?.addEventListener("click", () => modal.style.display = "flex");
+closeBtn?.addEventListener("click", () => modal.style.display = "none");
+cancelBtn?.addEventListener("click", () => modal.style.display = "none");
+
+// Hide modal if clicked outside content
+window.addEventListener("click", (e) => {
+    if (e.target === modal) {
+        modal.style.display = "none";
     }
 });

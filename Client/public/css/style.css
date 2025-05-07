@@ -133,12 +133,7 @@ nav ul li a:hover {
 }
 
 /* Instrument Page Styles */
-.instrument-item {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    margin-bottom: 40px;
-  }
+
   
   .instrument-image img {
     width: 300px; 

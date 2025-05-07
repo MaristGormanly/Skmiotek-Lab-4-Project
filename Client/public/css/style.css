@@ -141,11 +141,12 @@ nav ul li a:hover {
   }
   
   .instrument-image img {
-    width: 200px;
+    width: 300px; 
     height: auto;
+    object-fit: cover;
     border-radius: 5px;
-  }
-  
+}
+
   .instrument-description {
     max-width: 600px;
   }

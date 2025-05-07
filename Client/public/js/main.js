@@ -155,27 +155,7 @@ function loadPageContent(pageId) {
 
 // main.js
 
-function loadPageContent(pageId) {
-    const content = {
-        instruments: `
-            <h2>Instruments</h2>
-            <p>Welcome to the Instruments page.</p>
-        `,
-        software: `
-            <h2>Software</h2>
-            <p>Explore our custom software tools here.</p>
-        `,
-        studios: `
-            <h2>Studios</h2>
-            <p>Book studio time or explore studio features.</p>
-        `,
-        about: `
-            <h2>About Us</h2>
-            <p>Skull Kap Studios is dedicated to creativity and production.</p>
-        `
-    };
-
-    document.getElementById("main-content").innerHTML = content[pageId] || "<p>Page not found.</p>";
+document.getElementById("main-content").innerHTML = content[pageId] || "<p>Page not found.</p>";
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -199,8 +179,8 @@ document.addEventListener("DOMContentLoaded", () => {
         loadPageContent("about");
     });
 
-    // Load default content
-    loadPageContent("instruments");
+    // Load home page content initially
+    loadPageContent("home");
 });
 
 // Modal Logic
@@ -218,4 +198,3 @@ window.addEventListener("click", (e) => {
         modal.style.display = "none";
     }
 });
-}

@@ -138,13 +138,15 @@ nav ul li a:hover {
     gap: 20px;
     align-items: center;
     margin-bottom: 40px;
+  }
+  
+  .instrument-image img {
     width: 300px; 
     height: auto;
     object-fit: cover;
     border-radius: 5px;
-  }
-  
-  
+    display: block;
+}
 
   .instrument-description {
     max-width: 600px;

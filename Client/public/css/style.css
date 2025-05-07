@@ -135,19 +135,30 @@ nav ul li a:hover {
 /* Instrument Page Styles */
 .instrument-item {
     display: flex;
-    flex-direction: column;
-}
-
-.instrument-image {
-    height: 150px;
-    background-color: #333;
-    margin-bottom: 15px;
-    border-radius: 5px;
-    display: flex;
+    gap: 20px;
     align-items: center;
-    justify-content: center;
-    color: #777;
-}
+    margin-bottom: 40px;
+  }
+  
+  .instrument-image img {
+    width: 200px;
+    height: auto;
+    border-radius: 5px;
+  }
+  
+  .instrument-description {
+    max-width: 600px;
+  }
+  
+  .instrument-description h3 {
+    color: #fff;
+    margin-bottom: 8px;
+  }
+  
+  .instrument-description p {
+    color: #ccc;
+  }
+  
 
 /* About Page Styles */
 .about-images {

@@ -65,29 +65,29 @@ function loadPageContent(pageId) {
     `,
     
     instruments: `
-        <h2 class="page-title">INSTRUMENTS</h2>
-        
-        <div class="content-section">
-            <div class="grid-4">
-                <div class="instrument-item">
-                    <div class="instrument-image">
-                        <div class="instrument-image">
-                            <img src="/public/img/akaimini.jpeg" alt="AKAI MPK Mini">
-                        </div>
-                    <h3 class="section-title">AKAI MPK Mini</h3>
-                    <div class="content-box">
-                        <p>A compact MIDI keyboard controller with 25 mini keys, 8 drum pads, and 8 assignable knobs. Perfect for beginners and producers on the go.</p>
-                    </div>
-                </div>
-                
-                <div class="instrument-item">
-                    <div class="instrument-image">Instrument Image</div>
-                    <h3 class="section-title">Roland TR-8S</h3>
-                    <div class="content-box">
-                        <p>A powerful drum machine with authentic recreations of classic Roland drum machines plus modern features and sample import capabilities.</p>
-                    </div>
-                </div>
-                
+       
+  <section class="content-section">
+    <h2 class="section-title">Featured Instruments</h2>
+    <div class="instrument-item">
+      <div class="instrument-image">
+        <img src="/assets/instruments/akai-mpk-mini.jpg" alt="AKAI MPK Mini">
+      </div>
+      <div class="instrument-description">
+        <h3>AKAI MPK Mini</h3>
+        <p>A compact MIDI keyboard controller with 25 mini keys, 8 drum pads, and 8 assignable knobs. Perfect for beginners and producers on the go.</p>
+      </div>
+    </div>
+    <div class="instrument-item">
+      <div class="instrument-image">
+        <img src="/assets/instruments/roland-tr8s.jpg" alt="Roland TR-8S">
+      </div>
+      <div class="instrument-description">
+        <h3>Roland TR-8S</h3>
+        <p>A powerful drum machine with authentic recreations of classic Roland drum machines plus modern features and sample import capabilities.</p>
+      </div>
+    </div>
+  </section>
+
                 <div class="instrument-item">
                     <div class="instrument-image">Instrument Image</div>
                     <h3 class="section-title">Moog Subsequent 37</h3>

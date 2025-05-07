@@ -89,23 +89,25 @@ function loadPageContent(pageId) {
   </section>
 
                 <div class="instrument-item">
-                    <div class="instrument-image">Instrument Image</div>
-                    <h3 class="section-title">Moog Subsequent 37</h3>
-                    <div class="content-box">
-                        <p>A paraphonic analog synthesizer with rich, powerful sound. Features a 37-note keyboard, dual oscillators, and extensive modulation options.</p>
-                    </div>
-                </div>
-                
-                <div class="instrument-item">
-                    <div class="instrument-image">Instrument Image</div>
-                    <h3 class="section-title">Native Instruments Maschine</h3>
-                    <div class="content-box">
-                        <p>A hardware/software production system combining a sampler, sequencer, and controller in one intuitive package. Great for beat-making and live performance.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    `,
+    <div class="instrument-image">
+        <img src="/assets/instruments/moog-subsequent-37.jpg" alt="Moog Subsequent 37">
+    </div>
+    <div class="instrument-description">
+        <h3>Moog Subsequent 37</h3>
+        <p>A paraphonic analog synthesizer with rich, powerful sound. Features a 37-note keyboard, dual oscillators, and extensive modulation options.</p>
+    </div>
+</div>
+
+<div class="instrument-item">
+    <div class="instrument-image">
+        <img src="/assets/instruments/maschine.jpg" alt="Native Instruments Maschine">
+    </div>
+    <div class="instrument-description">
+        <h3>Native Instruments Maschine</h3>
+        <p>A hardware/software production system combining a sampler, sequencer, and controller in one intuitive package. Great for beat-making and live performance.</p>
+    </div>
+</div>
+`,
     
     studios: `
         <h2 class="page-title">STUDIOS</h2>

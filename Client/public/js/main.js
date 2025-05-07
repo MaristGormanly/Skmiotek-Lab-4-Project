@@ -1,5 +1,6 @@
 // Page Content Templates
-const pageTemplates = {
+function loadPageContent(pageId) {
+    const content = {
     home: `
         <h2 class="page-title">WELCOME TO SKULL KAP STUDIOS</h2>
         
@@ -217,4 +218,4 @@ window.addEventListener("click", (e) => {
         modal.style.display = "none";
     }
 });
-
+}

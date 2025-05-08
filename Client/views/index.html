@@ -18,7 +18,7 @@
                 <a href="#" id="nav-studios">STUDIOS</a>
                 <a href="#" id="nav-about">ABOUT</a>
             </nav>
-            <button class="btn-login">LOGIN</button>
+            <button class="btn-login">SIGN UP/LOGIN</button>
         </div>
     </header>
 
@@ -33,26 +33,56 @@
     </footer>
 
     <!-- Login Modal -->
-    <div id="login-modal" class="modal">
-        <div class="modal-content">
-            <span id="close-modal" class="close">&times;</span>
-            <h2 class="modal-title">Login</h2>
-            <form id="login-form">
-                <div class="form-group">
-                    <label for="username">Username:</label>
-                    <input type="text" id="username" name="username" required>
-                </div>
-                <div class="form-group">
-                    <label for="password">Password:</label>
-                    <input type="password" id="password" name="password" required>
-                </div>
-                <div class="modal-buttons">
-                    <button type="submit" class="btn btn-primary">Login</button>
-                    <button type="button" class="btn btn-secondary" id="btn-cancel">Cancel</button>
-                </div>
-            </form>
+<div id="login-modal" class="modal">
+    <div class="modal-content">
+      <span id="close-modal" class="close">&times;</span>
+      <h2 class="modal-title">Login</h2>
+      <form id="login-form">
+        <div class="form-group">
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" required />
         </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required />
+        </div>
+        <div class="modal-buttons">
+          <button type="submit" class="btn btn-primary">Login</button>
+          <button type="button" class="btn btn-secondary" id="btn-cancel">Cancel</button>
+        </div>
+        <p class="switch-modal-text">
+          Don’t have an account? <a href="#" id="open-signup">Sign up</a>
+        </p>
+      </form>
     </div>
+  </div>
+  
+  <!-- Sign Up Modal -->
+  <div id="signup-modal" class="modal">
+    <div class="modal-content">
+      <span id="close-signup-modal" class="close">&times;</span>
+      <h2 class="modal-title">Create Account</h2>
+      <form id="signup-form">
+        <div class="form-group">
+          <label for="signup-username">Username:</label>
+          <input type="text" id="signup-username" name="signup-username" required />
+        </div>
+        <div class="form-group">
+          <label for="signup-email">Email:</label>
+          <input type="email" id="signup-email" name="signup-email" required />
+        </div>
+        <div class="form-group">
+          <label for="signup-password">Password:</label>
+          <input type="password" id="signup-password" name="signup-password" required />
+        </div>
+        <div class="modal-buttons">
+          <button type="submit" class="btn btn-primary">Sign Up</button>
+          <button type="button" class="btn btn-secondary" id="btn-signup-cancel">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
 
     <script src="/js/main.js"></script>
 </body>

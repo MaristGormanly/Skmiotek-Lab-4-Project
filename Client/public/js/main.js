@@ -1,108 +1,120 @@
 // Page Content Templates
 function loadPageContent(pageId) {
     const content = {
-    home: `
+        home: `
         <h2 class="page-title">WELCOME TO SKULL KAP STUDIOS</h2>
-        
+    
         <div class="content-section">
-            <h3 class="section-title">Website Description</h3>
+            <h3 class="section-title">What Is Skull Kap Studios?</h3>
             <div class="content-box">
-                <p>Skull Kap Studios is your ultimate destination for all things music production. Whether you're a beginner looking to start making beats or a professional producer searching for the best equipment and software, we've got you covered. Our community connects musicians, producers, and audio engineers of all experience levels. Browse our curated selection of instruments, software recommendations, and studio setups. Share your own experiences, ask questions, and connect with like-minded creators in an ever growing community.</p>
+                <p>
+                    <strong>Skull Kap Studios</strong> is your ultimate destination for everything related to music production. 
+                    Whether you're just starting to make beats or you're a seasoned producer, this platform is built to support your creative journey. Explore top-tier instruments, trusted software tools, and professional-grade studio setups.</p>
+                <p>
+                    Connect with a vibrant community of producers, musicians, and engineers. Share knowledge, ask questions, and grow together in a space that celebrates music at every level. Visit the links at the top of the page to dive in to everything this website has to offer.</p>    
             </div>
         </div>
-        
+    
         <div class="content-section">
-            <h3 class="section-title">Website Audience</h3>
+            <h3 class="section-title">Who Is This For?</h3>
             <div class="content-box">
-                <p>This platform was created for:</p>
+                <p>Skull Kap Studios was built for creators who are passionate about music. You’ll fit right in if you're:</p>
                 <ul>
-                    <li>Music producers of all levels</li>
-                    <li>Musicians looking to improve their production/engineering skills</li>
-                    <li>Anyone interested in music technology and production techniques</li>
-                    <li>Those that have a deep love and passion for all things music!</li>
+                    <li>A music producer (beginner or advanced)</li>
+                    <li>A musician learning to record or mix your own tracks</li>
+                    <li>Interested in audio tech, DAWs, and studio gear</li>
+                    <li>Someone with a deep love and passion for music</li>
                 </ul>
-                <p>Whether you're just getting started or have years of experience, there is a home for you here at Skull Kap Studios.</p>
+                <p>
+                    Whether you're refining your sound or just hitting your first chord — there's a place for you here.
+                </p>
             </div>
         </div>
-    `,
+    `
+    ,
     
     software: `
-        <h2 class="page-title">POPULAR SOFTWARE FOR MUSIC PRODUCTION</h2>
-        
-        <div class="content-section">
-            <div class="software-item">
-                <div class="content-box">
-                    <h3>Ableton Live</h3>
-                    <p>Ableton Live is a digital audio workstation designed for music creation, recording, arrangement, mixing, and mastering. Known for its unique session view, it's particularly popular with electronic music producers and live performers.</p>
-                    <p>Key features include:</p>
-                    <ul>
-                        <li>Dual arrangement and session views</li>
-                        <li>Powerful MIDI sequencing</li>
-                        <li>Intuitive sample warping</li>
-                        <li>Built-in instruments and effects</li>
-                    </ul>
-                    <a href="https://www.ableton.com" target="_blank">Visit Website</a>
-                </div>
-                <div class="content-box instrument-image">Image</div>
+    <h2 class="page-title">POPULAR SOFTWARE FOR MUSIC PRODUCTION</h2>
+    
+    <div class="content-section">
+        <div class="software-item">
+            <div class="software-description">
+                <h3>Ableton Live</h3>
+                <p>Ableton Live is a digital audio workstation designed for music creation, recording, and performance. It's especially popular among electronic producers and live performers thanks to its unique Session View.</p>
+                <ul>
+                    <li>Dual Arrangement and Session Views</li>
+                    <li>Advanced MIDI sequencing and audio warping</li>
+                    <li>Extensive library of built-in instruments and effects</li>
+                    <li>Ideal for both studio and live performance</li>
+                </ul>
+                <a href="https://www.ableton.com" target="_blank" class="software-link">Visit Website →</a>
             </div>
-            
-            <div class="software-item">
-                <div class="content-box">
-                    <h3>FL Studio</h3>
-                    <p>FL Studio (formerly known as FruityLoops) is a complete software music production environment. Popular with beat makers and electronic producers, it's known for its pattern-based sequencer and intuitive workflow.</p>
-                    <p>Key features include:</p>
-                    <ul>
-                        <li>Step sequencer and piano roll</li>
-                        <li>Pattern-based workflow</li>
-                        <li>Lifetime free updates</li>
-                        <li>Extensive plugin compatibility</li>
-                    </ul>
-                    <a href="https://www.image-line.com" target="_blank">Visit Website</a>
-                </div>
-                <div class="content-box instrument-image">Image</div>
+            <div class="software-image">
+                <img src="../img/ableton.avif" alt="Ableton Live">
             </div>
         </div>
-    `,
-    
+
+        <div class="software-item">
+            <div class="software-description">
+                <h3>FL Studio</h3>
+                <p>FL Studio is a complete music production environment, known for its user-friendly workflow, pattern-based sequencing, and creative flexibility. A favorite among hip-hop and EDM producers.</p>
+                <ul>
+                    <li>Step sequencer and piano roll</li>
+                    <li>Pattern-based workflow and automation</li>
+                    <li>Lifetime free updates</li>
+                    <li>VST, AU, and plugin compatibility</li>
+                </ul>
+                <a href="https://www.image-line.com" target="_blank" class="software-link">Visit Website →</a>
+            </div>
+            <div class="software-image">
+                <img src="../img/flstudio.avif" alt="FL Studio">
+            </div>
+        </div>
+    </div>
+`, 
     instruments: `
        
   <section class="content-section">
     <h2 class="section-title">Featured Instruments</h2>
     <div class="instrument-item">
       <div class="instrument-image">
-        <img src="/assets/instruments/akai-mpk-mini.jpg" alt="AKAI MPK Mini">
+        <img src="../img/akaimini.jpg" alt="AKAI MPK Mini">
       </div>
       <div class="instrument-description">
         <h3>AKAI MPK Mini</h3>
         <p>A compact MIDI keyboard controller with 25 mini keys, 8 drum pads, and 8 assignable knobs. Perfect for beginners and producers on the go.</p>
+        <a href="https://www.akaipro.com/mpk-mini-mk3" target="_blank" class="instrument-link">View on AKAI Website →</a>
       </div>
     </div>
     <div class="instrument-item">
       <div class="instrument-image">
-        <img src="/assets/instruments/roland-tr8s.jpg" alt="Roland TR-8S">
+        <img src="../img/rolandairatr8s.jpeg" alt="Roland TR-8S">
       </div>
       <div class="instrument-description">
         <h3>Roland TR-8S</h3>
         <p>A powerful drum machine with authentic recreations of classic Roland drum machines plus modern features and sample import capabilities.</p>
+        <a href="https://www.roland.com/global/products/tr-8s/" target="_blank" class="instrument-link">View on Roland Website →</a>
       </div>
     </div>
     <div class="instrument-item">
         <div class="instrument-image">
-            <img src="/assets/instruments/moog-subsequent-37.jpg" alt="Moog Subsequent 37">
+            <img src="../img/minimoog.jpeg" alt="Minimoog Model D">
         </div>
         <div class="instrument-description">
-            <h3>Moog Subsequent 37</h3>
-            <p>A paraphonic analog synthesizer with rich, powerful sound. Features a 37-note keyboard, dual oscillators, and extensive modulation options.</p>
+            <h3>Minimoog Model D</h3>
+            <p>The 2022 Minimoog Model D includes a dedicated analog LFO with triangle and square waveshapes, a premium Fatar keybed with velocity and after pressure available via top panel CV jacks with onboard trimpots, MIDI integration, and a mixer feedback modification which allows the Minimoog Model D to overdrive and scream with the turn of a knob.</p>
+            <a href="https://www.moogmusic.com/synthesizers/minimoog-model-d/" target="_blank" class="instrument-link">View on Moog Website →</a>
         </div>
     </div>
 
     <div class="instrument-item">
         <div class="instrument-image">
-            <img src="/assets/instruments/maschine.jpg" alt="Native Instruments Maschine">
+            <img src="../img/nativeinstruments.webp" alt="Native Instruments Maschine">
         </div>
         <div class="instrument-description">
             <h3>Native Instruments Maschine</h3>
             <p>A hardware/software production system combining a sampler, sequencer, and controller in one intuitive package. Great for beat-making and live performance.</p>
+            <a href="https://www.native-instruments.com/en/products/maschine/production-systems/maschine-mk3/" target="_blank" class="instrument-link">View on Natives Website →</a>
         </div>
     </div>
 </section>
@@ -192,18 +204,46 @@ document.addEventListener("DOMContentLoaded", () => {
     loadPageContent("home");
 });
 
-// Modal Logic
-const modal = document.getElementById("login-modal");
-const loginBtn = document.querySelector(".btn-login");
-const closeBtn = document.getElementById("close-modal");
-const cancelBtn = document.getElementById("btn-cancel");
+window.onload = function () {
+    const loginModal = document.getElementById('login-modal');
+    const signupModal = document.getElementById('signup-modal');
+    const loginButton = document.querySelector('.btn-login');
+    const closeLoginModal = document.getElementById('close-modal');
+    const cancelLoginButton = document.getElementById('btn-cancel');
+  
+    const openSignupLink = document.getElementById('open-signup');
+    const closeSignupModal = document.getElementById('close-signup-modal');
+    const cancelSignupButton = document.getElementById('btn-signup-cancel');
+  
+    // Open Login Modal
+    loginButton.addEventListener('click', () => {
+      loginModal.style.display = 'flex';
+    });
+  
+    // Close Login Modal
+    closeLoginModal.addEventListener('click', () => {
+      loginModal.style.display = 'none';
+    });
+  
+    cancelLoginButton.addEventListener('click', () => {
+      loginModal.style.display = 'none';
+    });
+  
+    // Switch to Sign Up Modal
+    openSignupLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      loginModal.style.display = 'none';
+      signupModal.style.display = 'flex';
+    });
+  
+    // Close Sign Up Modal
+    closeSignupModal.addEventListener('click', () => {
+      signupModal.style.display = 'none';
+    });
+  
+    cancelSignupButton.addEventListener('click', () => {
+      signupModal.style.display = 'none';
+    });
+  };
+  
 
-loginBtn?.addEventListener("click", () => modal.style.display = "flex");
-closeBtn?.addEventListener("click", () => modal.style.display = "none");
-cancelBtn?.addEventListener("click", () => modal.style.display = "none");
-
-window.addEventListener("click", (e) => {
-    if (e.target === modal) {
-        modal.style.display = "none";
-    }
-});

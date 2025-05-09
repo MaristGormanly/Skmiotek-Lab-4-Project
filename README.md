@@ -1,8 +1,30 @@
 # Skmiotek-Lab-4-Project
 
 **Introduction**
-This program contains the required files in order to run a fully functional music production social media platform titled "Skull Kap Studios". This platform is a place where music lovers and producers of all levels can come together to share, create, and learn all things related to music. In this file I will describe how a user can run this website via tha files and code I have created. 
+Welcome to my repository for my Software Development 2 final project. This project is a website developed fully with front and back-end code. The website's name is Skull Kap Studios, a site that revolves around music production. My goal for this website is for it to eventually become a place where music producers can learn and also connect with one another and express their creativity. Within the site are pages such as the “Instruments” page, where users can read and learn a little bit about different kinds of instruments used in music production, such as MIDI keyboards and samplers, and the “Software” page, where users can find links to two very well known music production softwares, Ableton Live and FL Studio. This project showcases skills I have developed over the course of my last two years of learning how to become a programmer. WIthin the course of my degree at Marist University, I have learned skills like routing, user authentication, and database connectivity, as well as dynamic content loading using JavaScript, Node.js, and PostgreSQL, and front-end design using HTTP and CSS. Throughout this README file, I will describe the requirements needed to properly run this site, and the functions that the user will come into contact with when interacting with it. 
 
-To get things started, all the necesarry links between files are already implemeted, so things should run pretty smoothly. 
+**Dependencies**
+There are a few dependencies that are required to be installed before getting started, so make sure you have the following software downloaded and have an understanding of how to run command lines in your device's terminal. The software you are going to need are:
+  -Node.js (v18 or later)
+  -Homebrew 
+  -PostgreSQL 
 
-run the code for postgres in the db file to set up database. Postgres is a dependency in order to run the database. Run npm i in terminal to install dependencies server related dependencies. Run npm start to bring the server online and run the website.  
+**Clone Repo**
+  -Run - git clonehttps://github.com/MaristGormanly/Skmiotek-Lab-4-Project in terminal
+  -Enter projects directory - cd Skmiotek-Lab-4-Project 
+
+
+**Setting up the database and running the server**
+Within the projects home directory you will need to run the following command lines
+  -“npm i” downloads any server related dependencies you need
+  -“psql -U postgres -f server/db/createDatabase.sql” will create your database 
+  -“brew services start postgresql” will begin running your database 
+  -“npm start” will start running your express server through node.js on your desired port.
+
+You then want to make a copy of the “.env.example” file in my repository and replace the filler text with your database information in order to connect to your database server.
+
+**Functionality and features** 
+Upon entering the site, users will be greeted with a welcome page that explains the purpose of the site and the site's target audience. The linked pages at the top of the site provide easy navigation throughout the site's 4 main pages. This includes the “Instruments”, “Software”, “Studios”, and “About” pages. Eventually, I will add the “Connect” page, which will fulfill my goal of connecting music producers with one another through my site. This project features a database to store user info, such as signup and login info. This information will become more useful later on once I add the “Connect” page, but for now if users wish to create an account they can do so. 
+
+**Thank you!**
+That’s all for now. I am looking forward to expanding this project once I can put more time into it, but for now I am happy with what I have so far, and I hope you enjoy it.

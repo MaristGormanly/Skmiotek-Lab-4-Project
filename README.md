@@ -40,7 +40,9 @@ Replace the filler text I have here with your credentials, and then hit send. If
 Congratulations! You have successfully created a new user.
 
 **Login and create post:**
-You can also use Postman to login a user and create posts. To login using Postman, edit the URL to the following: http://localhost:1337/api/login, and replace the text in the body with the following:
+NOTE - In order to create a post you must be logged into an account!!!
+
+Aside from logging in on the site itself, you can also use Postman to login a user and create posts. To login using Postman, edit the URL to the following: http://localhost:1337/api/login, and replace the text in the body with the following:
 { "username": "your_username",
   "password": "your_password"
   }

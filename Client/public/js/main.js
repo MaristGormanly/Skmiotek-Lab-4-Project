@@ -175,7 +175,7 @@ function loadPageContent(pageId) {
         
         <div class="about-images">
             <div class="about-image">Studio Image</div>
-            <div class="about-image">Creator Image</div>
+            <img src="/img/stu.JPG" alt="Studio Image" class="studio-img">
         </div>
     `
 };

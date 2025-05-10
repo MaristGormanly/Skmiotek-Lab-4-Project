@@ -138,6 +138,18 @@ function loadPageContent(pageId) {
             </div>
         </div>
     `,
+
+    connect: `
+    <h2 class="page-title">CONNECT WITH THE COMMUNITY</h2>
+    <div id="connect-section">
+        <div id="connect-post-form">
+            <textarea id="new-post-content" placeholder="Share your thoughts!" rows="4" cols="60"></textarea>
+            <button id="submit-post">Post</button>
+        </div>
+        <div id="connect-feed"></div>
+    </div>
+`
+,
     
     about: `\
         <h2 class="page-title">ABOUT ME</h2>
@@ -168,43 +180,162 @@ function loadPageContent(pageId) {
     `
 };
 
-// main.js
-
 document.getElementById("main-content").innerHTML = content[pageId] || "<p>Page not found.</p>";
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+// function to update the authentication button based on login status
+function updateAuthButton() {
+    const authBtn = document.getElementById('auth-button');
+    const loginModal = document.getElementById('login-modal');
+    const loggedInUser = localStorage.getItem('loggedInUser');
+  
+    if (!authBtn) return;
+  
+    if (loggedInUser) {
+      authBtn.textContent = 'Log Out';
+      authBtn.onclick = () => {
+        localStorage.removeItem('loggedInUser');
+        updateAuthButton();
+      };
+    } else {
+      authBtn.textContent = 'Signup/Login';
+      authBtn.onclick = () => {
+        if (loginModal) loginModal.style.display = 'flex';
+      };
+    }
+  }
+  
+  function loadConnectFeed() {
+    fetch('/api/posts')
+      .then(res => res.json())
+      .then(posts => {
+        const feed = document.getElementById('connect-feed');
+        if (!feed) return;
+        feed.innerHTML = '';
+        posts.forEach(post => {
+          const div = document.createElement('div');
+          div.className = 'post';
+          div.innerHTML = `<strong>${post.username}</strong>: ${post.content}`;
+          feed.appendChild(div);
+        });
+      });
+  }
+  
+  function bindConnectPost() {
+    const button = document.getElementById('submit-post');
+    if (!button) return;
+  
+    button.addEventListener('click', () => {
+      const content = document.getElementById('new-post-content').value;
+      const username = localStorage.getItem('loggedInUser');
+      if (!username || !content) return;
+  
+      fetch('/api/posts', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username, content })
+      }).then(res => {
+        if (res.ok) {
+          document.getElementById('new-post-content').value = '';
+          loadConnectFeed();
+        } else {
+          alert('Failed to post');
+        }
+      });
+    });
+  }
+  
+  document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("nav-instruments")?.addEventListener("click", (e) => {
-        e.preventDefault();
-        loadPageContent("instruments");
+      e.preventDefault();
+      loadPageContent("instruments");
     });
-
+  
     document.getElementById("nav-software")?.addEventListener("click", (e) => {
-        e.preventDefault();
-        loadPageContent("software");
+      e.preventDefault();
+      loadPageContent("software");
     });
-
+  
     document.getElementById("nav-studios")?.addEventListener("click", (e) => {
-        e.preventDefault();
-        loadPageContent("studios");
+      e.preventDefault();
+      loadPageContent("studios");
     });
-
+  
+    document.getElementById("nav-connect")?.addEventListener("click", (e) => {
+      e.preventDefault();
+      loadPageContent("connect");
+      bindConnectPost();
+      loadConnectFeed();
+    });
+  
     document.getElementById("nav-about")?.addEventListener("click", (e) => {
-        e.preventDefault();
-        loadPageContent("about");
+      e.preventDefault();
+      loadPageContent("about");
     });
-
+  
     document.getElementById("nav-home")?.addEventListener("click", (e) => {
-        e.preventDefault();
-        loadPageContent("home");
+      e.preventDefault();
+      loadPageContent("home");
     });
-    
-
-    // Load home page content initially
+  
+    updateAuthButton();
     loadPageContent("home");
-});
-
-window.onload = function () {
+  
+    const loginForm = document.getElementById('login-form');
+    const loginModal = document.getElementById('login-modal');
+  
+    loginForm?.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+  
+      fetch('/api/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username, password })
+      })
+        .then(res => res.json())
+        .then(data => {
+          if (data.message === 'Login successful') {
+            localStorage.setItem('loggedInUser', username);
+            updateAuthButton();
+            loginModal.style.display = 'none';
+          } else {
+            alert('Login failed: ' + (data.message || 'Invalid credentials'));
+          }
+        })
+        .catch(err => {
+          console.error('Login error:', err);
+          alert('An error occurred during login.');
+        });
+    });
+  
+    const signupForm = document.getElementById('signup-form');
+    const signupModal = document.getElementById('signup-modal');
+  
+    signupForm?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const username = document.getElementById('signup-username').value;
+      const email = document.getElementById('signup-email').value;
+      const password = document.getElementById('signup-password').value;
+  
+      const response = await fetch('/api/signup', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username, email, password })
+      });
+  
+      if (response.ok) {
+        localStorage.setItem('loggedInUser', username);
+        updateAuthButton();
+        signupModal.style.display = 'none';
+      } else {
+        alert('Signup failed');
+      }
+    });
+  });
+  
+  window.onload = function () {
     const loginModal = document.getElementById('login-modal');
     const signupModal = document.getElementById('signup-modal');
     const loginButton = document.querySelector('.btn-login');
@@ -215,35 +346,17 @@ window.onload = function () {
     const closeSignupModal = document.getElementById('close-signup-modal');
     const cancelSignupButton = document.getElementById('btn-signup-cancel');
   
-    // Open Login Modal
-    loginButton.addEventListener('click', () => {
-      loginModal.style.display = 'flex';
-    });
+    loginButton?.addEventListener('click', () => loginModal && (loginModal.style.display = 'flex'));
+    closeLoginModal?.addEventListener('click', () => loginModal && (loginModal.style.display = 'none'));
+    cancelLoginButton?.addEventListener('click', () => loginModal && (loginModal.style.display = 'none'));
   
-    // Close Login Modal
-    closeLoginModal.addEventListener('click', () => {
-      loginModal.style.display = 'none';
-    });
-  
-    cancelLoginButton.addEventListener('click', () => {
-      loginModal.style.display = 'none';
-    });
-  
-    // Switch to Sign Up Modal
-    openSignupLink.addEventListener('click', (e) => {
+    openSignupLink?.addEventListener('click', (e) => {
       e.preventDefault();
-      loginModal.style.display = 'none';
-      signupModal.style.display = 'flex';
+      if (loginModal) loginModal.style.display = 'none';
+      if (signupModal) signupModal.style.display = 'flex';
     });
   
-    // Close Sign Up Modal
-    closeSignupModal.addEventListener('click', () => {
-      signupModal.style.display = 'none';
-    });
-  
-    cancelSignupButton.addEventListener('click', () => {
-      signupModal.style.display = 'none';
-    });
+    closeSignupModal?.addEventListener('click', () => signupModal && (signupModal.style.display = 'none'));
+    cancelSignupButton?.addEventListener('click', () => signupModal && (signupModal.style.display = 'none'));
   };
   
-

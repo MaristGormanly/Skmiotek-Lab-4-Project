@@ -1,4 +1,4 @@
-/* Global Styles */
+/* global styles  */
 * {
     margin: 0;
     padding: 0;
@@ -17,7 +17,7 @@ body {
     padding: 0 20px;
 }
 
-/* Header Styles */
+/* header styles */
 header {
     padding: 20px 0;
     border-bottom: 1px solid #333;
@@ -67,22 +67,23 @@ nav ul li a:hover {
     color: #ff3333;
 }
 
-.btn-login {
-    background-color: #ff3333;
-    color: #fff;
-    padding: 10px 20px;
+.auth-btn {
+    background-color: red;
+    color: white;
     border: none;
-    border-radius: 5px;
+    padding: 10px 20px;
     cursor: pointer;
     font-size: 16px;
-    transition: background-color 0.3s;
-}
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .auth-btn:hover {
+    background-color: darkred;
+  }
+  
 
-.btn-login:hover {
-    background-color: #cc0000;
-}
-
-/* Page Styles */
+/* page styles */
 .page-title {
     font-size: 36px;
     margin: 40px 0;
@@ -120,7 +121,7 @@ nav ul li a:hover {
 }
 
 
-/* Grid Layouts */
+/* grid layouts */
 .grid-2 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -133,7 +134,7 @@ nav ul li a:hover {
     gap: 20px;
 }
 
-/* Software Page Styles */
+/* software page styles */
 .software-item {
     display: flex;
     justify-content: space-between;
@@ -197,7 +198,7 @@ nav ul li a:hover {
 
     
 
-/* Instrument Page Styles */
+/* instrument page */
 .instrument-item {
     display: flex;
     align-items: flex-start;
@@ -255,9 +256,66 @@ nav ul li a:hover {
 .instrument-link:hover {
     color: #ff6666;
 }
-  
 
-/* About Page Styles */
+/* connect page */
+#connect-section {
+    padding: 30px;
+    background-color: #111;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+#connect-post-form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+#new-post-content {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    background-color: #222;
+    color: #fff;
+    border: 1px solid #444;
+    border-radius: 5px;
+    resize: vertical;
+    margin-bottom: 10px;
+}
+
+#submit-post {
+    align-self: flex-start;
+    background-color: #ff3333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#submit-post:hover {
+    background-color: #ff5555;
+}
+
+#connect-feed {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.post {
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 6px;
+    color: #eee;
+    font-size: 18px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+}
+
+
+/* about page */
 .about-images {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -283,7 +341,7 @@ nav ul li a:hover {
     border-radius: 5px;
 }
 
-/* Modal Styles */
+/* modal style */
 .modal {
     display: none;
     position: fixed;
@@ -361,7 +419,7 @@ nav ul li a:hover {
     color: #fff;
 }
 
-/* Responsive Styles */
+/* responsivness */
 @media (max-width: 768px) {
     .grid-4 {
         grid-template-columns: repeat(2, 1fr);
@@ -395,3 +453,4 @@ nav ul li a:hover {
         grid-template-columns: 1fr;
     }
 }
+

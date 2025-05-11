@@ -1,4 +1,4 @@
-// Page Content Templates
+// page content
 function loadPageContent(pageId) {
     const content = {
         home: `
@@ -341,7 +341,6 @@ function updateAuthButton() {
     const loginButton = document.querySelector('.btn-login');
     const closeLoginModal = document.getElementById('close-modal');
     const cancelLoginButton = document.getElementById('btn-cancel');
-  
     const openSignupLink = document.getElementById('open-signup');
     const closeSignupModal = document.getElementById('close-signup-modal');
     const cancelSignupButton = document.getElementById('btn-signup-cancel');

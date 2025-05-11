@@ -196,7 +196,6 @@ nav ul li a:hover {
     border-radius: 8px;
 }
 
-    
 
 /* instrument page */
 .instrument-item {
@@ -256,6 +255,19 @@ nav ul li a:hover {
 .instrument-link:hover {
     color: #ff6666;
 }
+
+.studio-img {
+    max-width: 90vw;
+    max-height: 500px;
+    width: auto;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  }
+  
 
 /* connect page */
 #connect-section {
@@ -337,7 +349,7 @@ nav ul li a:hover {
   
 
 
-  .about-image img {
+.about-image img {
     max-width: 100%;
     width: 100%;
     height: auto;
@@ -464,15 +476,3 @@ nav ul li a:hover {
     }
 }
 
-.studio-img {
-    max-width: 90vw;
-    max-height: 500px;
-    width: auto;
-    height: auto;
-    display: block;
-    margin: 20px auto;
-    object-fit: contain;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-  }
-  

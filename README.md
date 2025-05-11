@@ -8,6 +8,7 @@ There are a few dependencies that are required to be installed before getting st
   -Node.js (v18 or later)
   -Homebrew 
   -PostgreSQL 
+  -Postman (to test your API's functionality)
 
 **Clone Repo:**
   -Run - git clonehttps://github.com/MaristGormanly/Skmiotek-Lab-4-Project in terminal

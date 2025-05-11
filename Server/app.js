@@ -28,10 +28,6 @@ app.get('/', function (req, res) {
 let userRoutes = require(path.join(__dirname, '../server/route/userRoute.js'));
 app.use('/api/user', userRoutes);
 
-// route for website feature API
-let websiteFeatureRoutes = require(path.join(__dirname, '../server/route/websiteFeatureRoute.js'));
-app.use('/api/websiteFeature', websiteFeatureRoutes);
-
 // console log for errors
 app.use((err, req, res, next) => {
   console.error(err.stack);

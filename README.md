@@ -3,7 +3,7 @@
 **Introduction:**
 Welcome to my repository for my Software Development 2 final project. This project is a website developed fully with front and back-end code. The website's name is Skull Kap Studios, a site that revolves around music production. My goal for this website is for it to eventually become a place where music producers can learn and also connect with one another and express their creativity. Within the site are pages such as the “Instruments” page, where users can read and learn a little bit about different kinds of instruments used in music production, such as MIDI keyboards and samplers, and the “Software” page, where users can find links to two very well known music production softwares, Ableton Live and FL Studio. This project showcases skills I have developed over the course of my last two years of learning how to become a programmer. Within the course of my degree at Marist University, I have learned skills like routing, user authentication, and database connectivity, as well as dynamic content loading using JavaScript, Node.js, and PostgreSQL, and front-end design using HTTP and CSS. Throughout this README file, I will describe the requirements needed to properly run this site, and the functions that the user will come into contact with when interacting with it. 
 
-**DISCLAIMER:**
+**NOTICE:**
 Sources such as W3Schools, Codeacademy and AI were used to help debug the code used in this website, as I am a newcomer to fullstack development and faced various issues and bugs within my code that I would not have been able to resolve without the use of outside sources. 
 
 **Dependencies:**
